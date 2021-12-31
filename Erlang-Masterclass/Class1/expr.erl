@@ -1,7 +1,7 @@
 %% get some code from :: https://github.com/mdlkxzmcp/various_erlang/blob/master/Kent_Erlang_Master_Class/1_Functional_Programming/expr.erl
 
 -module(expr).
--export([print/1, eval/1, eval/2, compile/1, run/2, run/3, execute/2, parse/1, expr2/0, simplify/1]).
+-export([print/1, eval/1, eval/2, compile/1, run/2, run/3, execute/2, parse/1, expr2/0, simplify/1, evale/2]).
 -export_type([expr/0, env/0]).
 
 
@@ -103,6 +103,17 @@ eval(Env,{mul,E1,E2}) ->
     eval(Env,E1) * eval(Env,E2);
 eval(Env,{divi,E1,E2}) ->
     eval(Env,E1) / eval(Env,E2).
+
+
+%% @doc evale/2
+%% 
+%% Evaluation and Simplification of String
+%% Parse string to expression, simplificate then and evaluate.
+-spec evale(expr(), env()) -> integer().
+evale(N, Env) ->
+    {Ex, _N} = parse(simplify(N)),
+    eval(Env, Ex).
+
 
 
 %%
