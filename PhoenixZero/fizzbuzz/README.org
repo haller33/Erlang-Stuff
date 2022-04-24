@@ -23,3 +23,10 @@ Múltiplos de 3 e 5 substituidos por FizzBuzz
 Ler dados de um arquivo de entrada
 
 Caso o arquivo não exista, exibir mensagem de erro para usuário
+
+
+** TODO
+
+- Usar Witchcraft pora tratar dados de uma forma mais hask
+- processar cada vez mais dados
+- e criar um sistema de criação de arquivos para teste altomatizado
