@@ -1,0 +1,25 @@
+* Fizzbuzz problem
+
+** Dado Múltiplos de 3
+
+Múltiplos de 3 substituidos por Fizz
+
+** Dado Múltiplos de 5
+
+Múltiplos de 5 substituidos por Buzz
+
+** Dado Múltiplos de 3 e 5
+
+Múltiplos de 3 e 5 substituidos por FizzBuzz
+
+** Exemplo
+
+[1,2,3,4,5,15] => [1,2,Fizz,4,Buzz,FizzBuzz]
+
+[1,2,4,8,10]   => [1,2,4,8,Buzz]
+
+** Detalhe
+
+Ler dados de um arquivo de entrada
+
+Caso o arquivo não exista, exibir mensagem de erro para usuário
