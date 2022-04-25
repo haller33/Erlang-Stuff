@@ -35,6 +35,8 @@ defmodule NineNineElixir do
     my_last(some_list)
   end
 
+  defp my_last([]), do: []
+
   defp my_last(list) do
     case tl(list) do
       [] -> list
@@ -61,17 +63,13 @@ defmodule NineNineElixir do
     my_but_last(some_list)
   end
 
-  defp my_but_last(list) do
-    case list do
-      [] ->
-        list
+  defp my_but_last([]), do: []
 
-      _ ->
-        case tl(list) do
-          [] -> list
-          [_] -> list
-          _ -> my_but_last(tl(list))
-        end
+  defp my_but_last(list) do
+    case tl(list) do
+      [] -> list
+      [_] -> list
+      _ -> my_but_last(tl(list))
     end
   end
 end
