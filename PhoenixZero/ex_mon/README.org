@@ -1,0 +1,55 @@
+* ExMon
+
+** TODO: Add description
+
+** Installation
+
+If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+by adding `ex_mon` to your list of dependencies in `mix.exs`:
+
+```elixir
+def deps do
+  [
+    {:ex_mon, "~> 0.1.0"}
+  ]
+end
+```
+
+Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
+and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
+be found at <https://hexdocs.pm/ex_mon>.
+
+** Project Domain
+
+The game is bases on turns on with eatch player has to compete agains the
+computer
+
+the ideia is that a human and computer begin with 100 of points
+
+on eatch turn, every player has 3 moves to do, with is:
+
+- Moderate attach that as arround (18-25) of pain
+
+- Variable attach that as arround (10-35) of pain
+
+- Power of cure with is arround (18-25) of life
+
+*** The Explanation
+
+On eatch move, has to be show on screen what was happened and the status of
+every player
+
+If the computer has 0 (zero) of life, the game ends
+
+- if Human player lose, will be show the final result, and result has not to be
+  a negative number of life
+
+The human player have to choice the nickname and name of eatch move.
+
+** Resources
+
+https://hexdocs.pm/elixir/Map.html
+
+http://elixir-lang.org/getting-started/structs.html
+
+https://hexdocs.pm/elixir/Agent.html
