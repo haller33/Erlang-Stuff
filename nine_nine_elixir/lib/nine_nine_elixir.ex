@@ -1,4 +1,7 @@
 defmodule NineNineElixir do
+
+alias NineNineElixir.Tools, as: T
+  
   @moduledoc """
   Documentation for `NineNineElixir`.
   """
@@ -28,20 +31,11 @@ defmodule NineNineElixir do
 
   """
   def day01 do
-    my_last([:a, :b, :c, :d])
+    T.my_last([:a, :b, :c, :d])
   end
 
-  def day01(some_list) do
-    my_last(some_list)
-  end
-
-  defp my_last([]), do: []
-
-  defp my_last(list) do
-    case tl(list) do
-      [] -> list
-      _ -> my_last(tl(list))
-    end
+  def day01(list) do
+    T.my_last(list)
   end
 
   @doc """
@@ -56,21 +50,11 @@ defmodule NineNineElixir do
 
   """
   def day02 do
-    my_but_last([:a, :b, :c, :d])
+    T.my_but_last([:a, :b, :c, :d])
   end
 
-  def day02(some_list) do
-    my_but_last(some_list)
-  end
-
-  defp my_but_last([]), do: []
-
-  defp my_but_last(list) do
-    case tl(list) do
-      [] -> list
-      [_] -> list
-      _ -> my_but_last(tl(list))
-    end
+  def day02(list) do
+    T.my_but_last(list)
   end
 
   @doc """
@@ -86,18 +70,11 @@ defmodule NineNineElixir do
 
   """
   def day03 do
-    element_at([:a, :b, :c, :d, :e], 3)
+    T.element_at([:a, :b, :c, :d, :e], 3)
   end
 
-  def day03(some_list, cnt) do
-    element_at(some_list, cnt)
-  end
-
-  defp element_at([], _), do: []
-  defp element_at(lst, 1), do: hd(lst)
-
-  defp element_at(lst, cnt_item) do
-    element_at(tl(lst), cnt_item - 1)
+  def day03(list, cnt) do
+    T.element_at(list, cnt)
   end
 
   @doc """
@@ -108,15 +85,6 @@ defmodule NineNineElixir do
     P04 (*) Find the number of elements of a list.
   """
   def day04 do
-    elements_length([:a, :b, :c, :d])    
-  end
-
-  defp elements_length([]), do: 0
-  defp elements_length(lst), do: elements_length(lst, 1)
-  defp elements_length(lst, acc) do
-    case tl lst do
-      [] -> acc
-      _ -> elements_length(tl(lst), acc + 1)
-    end
+    T.elements_length([:a, :b, :c, :d])    
   end
 end

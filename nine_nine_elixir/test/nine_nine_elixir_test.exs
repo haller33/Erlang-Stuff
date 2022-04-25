@@ -44,7 +44,7 @@ defmodule NineNineElixirTest do
     assert NNElixir.day03([:a, :b], 2) == :b
     assert NNElixir.day03([:a, :b, :c], 3) == :c
     assert NNElixir.day03([:a, [:n, :asdf], :c], 2) == [:n, :asdf]
-    
+
     assert NNElixir.day03([:a, :b, :c, :d, :e], 2) == :b
   end
 
