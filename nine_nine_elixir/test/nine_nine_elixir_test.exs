@@ -47,4 +47,8 @@ defmodule NineNineElixirTest do
     
     assert NNElixir.day03([:a, :b, :c, :d, :e], 2) == :b
   end
+
+  test "day four test day04/0" do
+    assert NNElixir.day04() == 4
+  end
 end
