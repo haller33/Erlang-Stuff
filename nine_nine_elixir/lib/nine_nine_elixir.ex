@@ -99,4 +99,24 @@ defmodule NineNineElixir do
   defp element_at(lst, cnt_item) do
     element_at(tl(lst), cnt_item - 1)
   end
+
+  @doc """
+    The Ninety-Nine Lisp Problems
+
+    ## Working with lists
+
+    P04 (*) Find the number of elements of a list.
+  """
+  def day04 do
+    elements_length([:a, :b, :c, :d])    
+  end
+
+  defp elements_length([]), do: 0
+  defp elements_length(lst), do: elements_length(lst, 1)
+  defp elements_length(lst, acc) do
+    case tl lst do
+      [] -> acc
+      _ -> elements_length(tl(lst), acc + 1)
+    end
+  end
 end
