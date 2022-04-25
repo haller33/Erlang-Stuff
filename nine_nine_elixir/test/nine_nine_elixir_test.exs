@@ -11,6 +11,8 @@ defmodule NineNineElixirTest do
   end
   
   test "day one test day01/1" do
+    assert NineNineElixir.day01([]) == []
+    assert NineNineElixir.day01([:a]) == [:a]
     assert NineNineElixir.day01([:a, :b]) == [:b]
     assert NineNineElixir.day01([:a, :b, :c]) == [:c]
     assert NineNineElixir.day01([:a, [:n, :asdf], :c]) == [:c]
