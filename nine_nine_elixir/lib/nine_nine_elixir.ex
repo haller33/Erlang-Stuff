@@ -72,4 +72,31 @@ defmodule NineNineElixir do
       _ -> my_but_last(tl(list))
     end
   end
+
+  @doc """
+  The Ninety-Nine Lisp Problems
+
+  ## Working with lists
+
+    P03 (*) Find the K'th element of a list.
+    The first element in the list is number 1.
+    Example:
+    * (element-at '(a b c d e) 3)
+    C
+
+  """
+  def day03 do
+    element_at([:a, :b, :c, :d, :e], 3)
+  end
+
+  def day03(some_list, cnt) do
+    element_at(some_list, cnt)
+  end
+
+  defp element_at([], _), do: []
+  defp element_at(lst, 1), do: hd(lst)
+
+  defp element_at(lst, cnt_item) do
+    element_at(tl(lst), cnt_item - 1)
+  end
 end
