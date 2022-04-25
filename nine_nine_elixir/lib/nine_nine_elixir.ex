@@ -1,7 +1,6 @@
 defmodule NineNineElixir do
+  alias NineNineElixir.Tools, as: T
 
-alias NineNineElixir.Tools, as: T
-  
   @moduledoc """
   Documentation for `NineNineElixir`.
   """
@@ -85,6 +84,25 @@ alias NineNineElixir.Tools, as: T
     P04 (*) Find the number of elements of a list.
   """
   def day04 do
-    T.elements_length([:a, :b, :c, :d])    
+    T.elements_length([:a, :b, :c, :d])
+  end
+
+  def day04(list) do
+    T.elements_length(list)
+  end
+
+  @doc """
+    The Ninety-Nine Lisp Problems
+
+    ## Working with lists
+
+    P05 (*) Reverse a list.
+  """
+  def day05 do
+    T.reverse_list([:a, :b, :c, :d])
+  end
+
+  def day05(list) do
+    T.reverse_list(list)
   end
 end
