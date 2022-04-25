@@ -34,4 +34,14 @@ defmodule NineNineElixir.Tools do
       _ -> elements_length(tl(lst), acc + 1)
     end
   end
+
+  def reverse_list([]), do: []
+
+  def reverse_list(lst), do: reverse_list(lst, [])
+
+  def reverse_list([], acc), do: acc
+
+  def reverse_list(list, acc) do
+    reverse_list(tl(list), [hd(list) | acc])
+  end
 end

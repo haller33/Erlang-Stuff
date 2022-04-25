@@ -51,4 +51,26 @@ defmodule NineNineElixirTest do
   test "day four test day04/0" do
     assert NNElixir.day04() == 4
   end
+
+  test "day four test day04/1" do
+    assert NNElixir.day04([]) == 0
+    assert NNElixir.day04([:a]) == 1
+    assert NNElixir.day04([:a, :b]) == 2
+    assert NNElixir.day04([:a, :b, :c]) == 3
+    assert NNElixir.day04([:a, [:n, :asdf], :c]) == 3
+    assert NNElixir.day04([:a, [:n, :asdf], :c, :d, :e]) == 5
+  end
+
+  test "day five test day05/0" do
+    assert NNElixir.day05() == [:d, :c, :b, :a]
+  end
+
+  test "day five test day05/1" do
+    assert NNElixir.day05([]) == []
+    assert NNElixir.day05([:a]) == [:a]
+    assert NNElixir.day05([:a, :b]) == [:b, :a]
+    assert NNElixir.day05([:a, :b, :c]) == [:c, :b, :a]
+    assert NNElixir.day05([:a, [:n, :asdf], :c]) == [:c, [:n, :asdf], :a]
+    assert NNElixir.day05([:a, [:n, :asdf], :c, :d, :e]) == [:e, :d, :c, [:n, :asdf], :a]
+  end
 end
