@@ -37,8 +37,41 @@ defmodule NineNineElixir do
 
   defp my_last(list) do
     case tl(list) do
-      [] -> hd(list)
-      _  -> my_last(tl(list))
+      [] -> list
+      _ -> my_last(tl(list))
+    end
+  end
+
+  @doc """
+  The Ninety-Nine Lisp Problems
+
+  ## Working with lists
+
+    P02 (*) Find the last but one box of a list.
+    Example:
+    * (my-but-last '(a b c d))
+    (C D)
+
+  """
+  def day02 do
+    my_but_last([:a, :b, :c, :d])
+  end
+
+  def day02(some_list) do
+    my_but_last(some_list)
+  end
+
+  defp my_but_last(list) do
+    case list do
+      [] ->
+        list
+
+      _ ->
+        case tl(list) do
+          [] -> list
+          [_] -> list
+          _ -> my_but_last(tl(list))
+        end
     end
   end
 end
