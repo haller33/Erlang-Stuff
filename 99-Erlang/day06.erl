@@ -17,17 +17,17 @@
 
 -spec test_list_one() -> list().
 test_list_one() ->
-    [[[a, b, c, b, a], []], true].
+    [[[[a, b, c, b, a], []], true]].
  -spec list_tests_of() -> list().
 list_tests_of() ->
     [[[[a, b, c, b, a], []], true],
      [[[a, b, c, d], []], false],
-     [[[a, b, a], []], true], %% TODO ERROR
+     [[[a, b, a], []], true],
      [[[a, b, c, c, b, a], []], true], %% TODO ERROR
      [[[a, a], []], true],
      [[[a, b], []], false],
      [[[a], []], false],
-     [[[], []], false]]. %% TODO ERROR
+     [[[], []], false]].
 
 -spec element_at(list(), number(), number()) -> atom().
 element_at([], _N, _Acc) ->
@@ -54,13 +54,10 @@ reverse([A]) ->
     [A];
 reverse([A|T]) ->
     reverse(T) ++ [A].
+
 % -spec solution_acc(list(), list(), atom(), atom(), number()) -> atom().
-solution_acc([], _, _, _, _) ->
-    false;
-solution_acc(_, [], _, _, _) ->
-    false;
-solution_acc([], [], _, _, _) ->
-    false;
+solution_acc([], [], _, _, 0) ->
+    true;
 solution_acc([X|_], [S|_], nil, _, 0) ->
     case X of
 	S -> true;
@@ -90,16 +87,20 @@ solution_acc([X|XS], [S|SX], ok, Sym, Number) ->
 
 -spec solution(list()) -> list().
 solution([]) ->
-    [];
+    false;
 solution(XXS) ->
     Lenght = lenght(XXS, 1),
-    case Lenght rem 2 of
-	0 -> ActualLength = Lenght div 2,
-	     solution_acc(XXS, reverse(XXS), nil, nil, ActualLength);
-	1 -> ActualLength = (Lenght div 2) + 1,
-	     solution_acc(XXS, reverse(XXS), ok, element_at(XXS, ActualLength, 1), ActualLength)
+    case Lenght > 2 of
+        false -> false;
+	true -> 
+	    case Lenght rem 2 of
+		0 -> ActualLength = Lenght div 2,
+		     solution_acc(XXS, reverse(XXS), nil, nil, ActualLength);
+		1 -> ActualLength = (Lenght div 2) + 1,
+		     solution_acc(XXS, reverse(XXS), ok, element_at(XXS, ActualLength, 1), ActualLength)
+	    end
     end.
-  
+
 -spec test_on_list(list(), list()) -> list().
 test_on_list([H|T], Acc) ->
     [[Test,ArgsV], Check] = H,
@@ -109,13 +110,13 @@ test_on_list([H|T], Acc) ->
 	Check ->
 	    test_on_list(T, [{Check, ok}|Acc]);
 	_N ->
-	    test_on_list(T, [{{Check, Rn}, error}|Acc])
+	    test_on_list(T, [{{Check, Rn, Test}, error}|Acc])
     end;
 test_on_list([], Lis) ->
     Lis.
 
 run() ->
   % hello_world.
-    reverse(test_on_list([test_list_one()], [])),
+    reverse(test_on_list(test_list_one(), [])),
     
     reverse(test_on_list(list_tests_of(), [])).

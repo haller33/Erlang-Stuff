@@ -71,8 +71,8 @@ reverse([A|T]) ->
 
 run() ->
     % hello_world.
-    reverse(test_on_list([test_list_one()], [])).
-    % reverse(test_on_list(list_tests_of(), [])).
+    % reverse(test_on_list([test_list_one()], [])).
+    reverse(test_on_list(list_tests_of(), [])).
 
 
 
