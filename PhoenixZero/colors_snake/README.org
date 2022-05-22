@@ -1,0 +1,28 @@
+* ColorsSnake
+
+** Colors Snake
+
+Is a Multi-dimensional colored like game ( like Hue ) but with functionalities
+like time travel ( Portal Reloded ) and some others stuffs ( like back-time and
+'pause' ) to make a multi-dimentional puzzle Snake game based on TUI ( TEA Elm arctecture )
+interface terminal like with a simple api and level creation for seakeness of game
+projection simplification and extension.
+
+
+** Installation
+
+If [[https://hex.pm/docs/publish][available in Hex]], the package can be installed
+by adding `colors_snake` to your list of dependencies in `mix.exs`:
+
+#+begin_src elixir
+def deps do
+  [
+    {:colors_snake, "~> 0.1.0"}
+  ]
+end
+#+end_src
+
+Documentation can be generated with [[https://github.com/elixir-lang/ex_doc][ExDoc]]
+and published on [[https://hexdocs.pm][HexDocs]]. Once published, the docs can
+be found at <https://hexdocs.pm/colors_snake>.
+
